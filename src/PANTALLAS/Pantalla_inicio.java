@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package PANTALLAS;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
@@ -63,9 +59,14 @@ public class Pantalla_inicio extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Contraseña :");
 
-        txt_Contraseña.setActionCommand(null);
+        txt_Contraseña.setActionCommand("null");
 
         bttn_Iniciar_Sesion.setText("INICIAR SESION");
+        bttn_Iniciar_Sesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttn_Iniciar_SesionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Color_fondoLayout = new javax.swing.GroupLayout(Color_fondo);
         Color_fondo.setLayout(Color_fondoLayout);
@@ -123,6 +124,10 @@ public class Pantalla_inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bttn_Iniciar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_Iniciar_SesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bttn_Iniciar_SesionActionPerformed
 
   private void verificarCredenciales() {
         String usuario = txt_Usuario.getText().trim();
