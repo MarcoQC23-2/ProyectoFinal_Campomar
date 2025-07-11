@@ -22,7 +22,7 @@ public class Pantalla_inicio extends javax.swing.JFrame {
         usuariosRegistrados.put("jhostin", "5678");
     }
     private void initListeners() {
-        btn_Iniciar_Sesion.addActionListener(new java.awt.event.ActionListener() {
+        btn_Ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 verificarCredenciales();
             }
@@ -38,99 +38,70 @@ public class Pantalla_inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Color_fondo = new javax.swing.JPanel();
-        imagen1 = new javax.swing.JLabel();
-        lbl_Usuario = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        txt_Usuario = new javax.swing.JTextField();
-        btn_Iniciar_Sesion = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txt_ID = new javax.swing.JTextField();
         pf_Contraseña = new javax.swing.JPasswordField();
+        btn_Ingresar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Color_fondo.setBackground(new java.awt.Color(0, 36, 120));
-        Color_fondo.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        imagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/campomar-logo.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/campomar-logo.jpg"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
 
-        lbl_Usuario.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_Usuario.setText("Usuario :");
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setText("\"Campomar, nutrición del mar peruano a tu hogar\"");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 430, 40));
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Contraseña :");
+        jLabel6.setText("Contraseña");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, -1, -1));
 
-        btn_Iniciar_Sesion.setText("INICIAR SESION");
-        btn_Iniciar_Sesion.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setText("ID");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, -1, -1));
+        jPanel1.add(txt_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 220, 30));
+        jPanel1.add(pf_Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 220, 30));
+
+        btn_Ingresar.setText("INGRESAR");
+        btn_Ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_Iniciar_SesionActionPerformed(evt);
+                btn_IngresarActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 300, 30));
 
-        pf_Contraseña.setName(""); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Rectangle 27.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 360, 260));
 
-        javax.swing.GroupLayout Color_fondoLayout = new javax.swing.GroupLayout(Color_fondo);
-        Color_fondo.setLayout(Color_fondoLayout);
-        Color_fondoLayout.setHorizontalGroup(
-            Color_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Color_fondoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Color_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Color_fondoLayout.createSequentialGroup()
-                        .addComponent(imagen1)
-                        .addContainerGap(252, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Color_fondoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(Color_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(22, 22, 22)
-                        .addGroup(Color_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                            .addComponent(pf_Contraseña))
-                        .addGap(34, 34, 34))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Color_fondoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_Iniciar_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
-        );
-        Color_fondoLayout.setVerticalGroup(
-            Color_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Color_fondoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(imagen1)
-                .addGap(65, 65, 65)
-                .addGroup(Color_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Usuario)
-                    .addComponent(txt_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(Color_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(pf_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(btn_Iniciar_Sesion)
-                .addContainerGap(146, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Fondo_FrameIngresar.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Color_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Color_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_Iniciar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Iniciar_SesionActionPerformed
+    private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_Iniciar_SesionActionPerformed
+    }//GEN-LAST:event_btn_IngresarActionPerformed
 
   private void verificarCredenciales() {
-        String usuario = txt_Usuario.getText().trim();
+        String usuario = txt_ID.getText().trim();
         String contraseña = new String(pf_Contraseña.getPassword()).trim(); // ← Usamos getText()
 
         if (usuario.isEmpty() || contraseña.isEmpty()) {
@@ -179,12 +150,15 @@ public class Pantalla_inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Color_fondo;
-    private javax.swing.JButton btn_Iniciar_Sesion;
-    private javax.swing.JLabel imagen1;
+    private javax.swing.JButton btn_Ingresar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lbl_Usuario;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField pf_Contraseña;
-    private javax.swing.JTextField txt_Usuario;
+    private javax.swing.JTextField txt_ID;
     // End of variables declaration//GEN-END:variables
 }

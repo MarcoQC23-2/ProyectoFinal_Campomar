@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package PANTALLAS;
+
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,6 +15,42 @@ public class Sistema_Gestion_Integral_II extends javax.swing.JFrame {
      */
     public Sistema_Gestion_Integral_II() {
         initComponents();
+        cargarDatosInventario();
+        cargarAccionAlmacen();
+    }
+    private void cargarDatosInventario() {
+    DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+    modelo.setRowCount(0); // Limpia la tabla antes de agregar
+
+    // Datos de ejemplo realistas para Campomar
+    Object[][] datos = {
+        {"Sardina en Aceite", "LT-101", 250, "2025-07-10", "Estante A1"},
+        {"Caballa en Agua", "LT-102", 180, "2025-07-09", "Estante B2"},
+        {"Atún al Natural", "LT-103", 300, "2025-07-08", "Estante A3"},
+        {"Sardina Picante", "LT-104", 120, "2025-07-10", "Estante C1"},
+        {"Caballa Ahumada", "LT-105", 90, "2025-07-07", "Estante B1"}
+    };
+
+    for (Object[] fila : datos) {
+        modelo.addRow(fila);
+    }
+    }
+    private void cargarAccionAlmacen() {
+    DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+    modelo.setRowCount(0); // Limpia la tabla antes de agregar
+
+    // Datos realistas de ejemplo
+    Object[][] datos = {
+        {"2025-07-11", "Caballa en Agua", "Ingreso", 100, "Juan Pérez"},
+        {"2025-07-11", "Sardina Picante", "Retiro", 30, "Ana Ramírez"},
+        {"2025-07-12", "Atún en Aceite", "Ajuste", -15, "Supervisor"},
+        {"2025-07-13", "Caballa Ahumada", "Reubicación", 0, "Jorge Ruiz"}
+    };
+
+    for (Object[] fila : datos) {
+        modelo.addRow(fila);
+    }
+
     }
 
     /**
@@ -29,21 +63,74 @@ public class Sistema_Gestion_Integral_II extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        btn_Producción = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(769, 509));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "PRODUCTO", "LOTE", "STOCK", "FECHA DE INGRESO", "UBICACION"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jTabbedPane1.addTab("Inventario", jScrollPane1);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "FECHA", "PRODUCTO", "TIPO ACCION", "CANTIDAD", "RESPONSABLE"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jTabbedPane1.addTab("Accion Almacen", jScrollPane2);
+
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 590, 410));
+
+        btn_Producción.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Produccion.png"))); // NOI18N
+        btn_Producción.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ProducciónMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btn_Producción, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Frame 2 (3).png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Frame 2 (2).png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Rectangle 2.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 410));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Group 11@2x.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 70));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Fondo_FrameIngresar.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 510));
@@ -56,11 +143,20 @@ public class Sistema_Gestion_Integral_II extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_ProducciónMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ProducciónMouseClicked
+        // Crear instancia de la primera ventana
+        Sistema_Gestion_Integral sistema = new Sistema_Gestion_Integral();
+        sistema.setVisible(true);
+        sistema.setLocationRelativeTo(null);
+        // Cerrar la ventana actual
+        dispose();
+    }//GEN-LAST:event_btn_ProducciónMouseClicked
 
     /**
      * @param args the command line arguments
@@ -88,9 +184,17 @@ public class Sistema_Gestion_Integral_II extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btn_Producción;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
