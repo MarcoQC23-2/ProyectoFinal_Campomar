@@ -12,6 +12,5 @@ public class PROYECTOFINAL_CAMPOMAR {
     public static void main(String[] args) {
         Pantalla_inicio pantalla_inicio = new Pantalla_inicio();
         new Pantalla_inicio().setVisible(true);
-    }
-    
+    }  
 }
