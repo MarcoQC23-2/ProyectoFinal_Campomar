@@ -13,16 +13,16 @@ public class Pantalla_inicio extends javax.swing.JFrame {
      */
     public Pantalla_inicio() {
        initComponents();
-    inicializarUsuarios();
-    initListeners(); // ¡MUY IMPORTANTE!
+       inicializarUsuarios();
+       initListeners(); // ¡MUY IMPORTANTE!
     }
- private void inicializarUsuarios() {
+    private void inicializarUsuarios() {
         usuariosRegistrados = new HashMap<>();
         usuariosRegistrados.put("admin", "1234");
         usuariosRegistrados.put("jhostin", "5678");
     }
- private void initListeners() {
-        bttn_Iniciar_Sesion.addActionListener(new java.awt.event.ActionListener() {
+    private void initListeners() {
+        btn_Iniciar_Sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 verificarCredenciales();
             }
@@ -43,8 +43,8 @@ public class Pantalla_inicio extends javax.swing.JFrame {
         lbl_Usuario = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txt_Usuario = new javax.swing.JTextField();
-        txt_Contraseña = new javax.swing.JTextField();
-        bttn_Iniciar_Sesion = new javax.swing.JButton();
+        btn_Iniciar_Sesion = new javax.swing.JButton();
+        pf_Contraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,14 +59,14 @@ public class Pantalla_inicio extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Contraseña :");
 
-        txt_Contraseña.setActionCommand("null");
-
-        bttn_Iniciar_Sesion.setText("INICIAR SESION");
-        bttn_Iniciar_Sesion.addActionListener(new java.awt.event.ActionListener() {
+        btn_Iniciar_Sesion.setText("INICIAR SESION");
+        btn_Iniciar_Sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bttn_Iniciar_SesionActionPerformed(evt);
+                btn_Iniciar_SesionActionPerformed(evt);
             }
         });
+
+        pf_Contraseña.setName(""); // NOI18N
 
         javax.swing.GroupLayout Color_fondoLayout = new javax.swing.GroupLayout(Color_fondo);
         Color_fondo.setLayout(Color_fondoLayout);
@@ -85,12 +85,12 @@ public class Pantalla_inicio extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22)
                         .addGroup(Color_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_Usuario)
-                            .addComponent(txt_Contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
+                            .addComponent(txt_Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(pf_Contraseña))
                         .addGap(34, 34, 34))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Color_fondoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bttn_Iniciar_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Iniciar_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57))
         );
         Color_fondoLayout.setVerticalGroup(
@@ -105,10 +105,10 @@ public class Pantalla_inicio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(Color_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txt_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addComponent(bttn_Iniciar_Sesion)
-                .addContainerGap(149, Short.MAX_VALUE))
+                    .addComponent(pf_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(btn_Iniciar_Sesion)
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,13 +125,13 @@ public class Pantalla_inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bttn_Iniciar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_Iniciar_SesionActionPerformed
+    private void btn_Iniciar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Iniciar_SesionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bttn_Iniciar_SesionActionPerformed
+    }//GEN-LAST:event_btn_Iniciar_SesionActionPerformed
 
   private void verificarCredenciales() {
         String usuario = txt_Usuario.getText().trim();
-        String contraseña = txt_Contraseña.getText().trim(); // ← Usamos getText()
+        String contraseña = new String(pf_Contraseña.getPassword()).trim(); // ← Usamos getText()
 
         if (usuario.isEmpty() || contraseña.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos vacíos", JOptionPane.ERROR_MESSAGE);
@@ -180,11 +180,11 @@ public class Pantalla_inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Color_fondo;
-    private javax.swing.JButton bttn_Iniciar_Sesion;
+    private javax.swing.JButton btn_Iniciar_Sesion;
     private javax.swing.JLabel imagen1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Usuario;
-    private javax.swing.JTextField txt_Contraseña;
+    private javax.swing.JPasswordField pf_Contraseña;
     private javax.swing.JTextField txt_Usuario;
     // End of variables declaration//GEN-END:variables
 }

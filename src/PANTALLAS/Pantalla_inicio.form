@@ -61,8 +61,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txt_Usuario" max="32767" attributes="0"/>
-                              <Component id="txt_Contraseña" pref="121" max="32767" attributes="0"/>
+                              <Component id="txt_Usuario" pref="121" max="32767" attributes="0"/>
+                              <Component id="pf_Contraseña" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
@@ -70,7 +70,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="bttn_Iniciar_Sesion" min="-2" pref="184" max="-2" attributes="0"/>
+                  <Component id="btn_Iniciar_Sesion" min="-2" pref="184" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -88,11 +88,11 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_Contraseña" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pf_Contraseña" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="bttn_Iniciar_Sesion" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="149" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="btn_Iniciar_Sesion" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="146" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -123,18 +123,18 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txt_Usuario">
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_Contrase&#xf1;a">
-          <Properties>
-            <Property name="actionCommand" type="java.lang.String" value="null"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="bttn_Iniciar_Sesion">
+        <Component class="javax.swing.JButton" name="btn_Iniciar_Sesion">
           <Properties>
             <Property name="text" type="java.lang.String" value="INICIAR SESION"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttn_Iniciar_SesionActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Iniciar_SesionActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="pf_Contrase&#xf1;a">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="" noResource="true"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
